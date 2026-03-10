@@ -33,7 +33,7 @@ def add(a: int, b: int) -> int:
         Space: O(1)
     """
     # TODO: implement
-    raise NotImplementedError
+    return a + b
 
 
 def is_even(n: int) -> bool:
@@ -53,7 +53,7 @@ def is_even(n: int) -> bool:
         Space: O(1)
     """
     # TODO: implement
-    raise NotImplementedError
+    return n % 2 == 0
 
 
 def linear_search(nums: Sequence[T], target: T) -> Optional[int]:
@@ -75,7 +75,10 @@ def linear_search(nums: Sequence[T], target: T) -> Optional[int]:
         Space: O(1)
     """
     # TODO: implement
-    raise NotImplementedError
+    for i in range(len(nums)):
+        if nums[i] == target:
+            return i
+    return None
 
 
 def count_occurrences(items: Iterable[T], target: T) -> int:
@@ -94,7 +97,12 @@ def count_occurrences(items: Iterable[T], target: T) -> int:
         Space: O(1)
     """
     # TODO: implement
-    raise NotImplementedError
+    count = 0
+    for item in items:
+        if item == target:
+            count += 1
+    return count
+   
 
 
 # Stretch (optional)
@@ -112,4 +120,7 @@ def last_index(nums: Sequence[T], target: T) -> Optional[int]:
         Space: O(1)
     """
     # TODO: implement
-    raise NotImplementedError
+    for i in range(len(nums) - 1, -1, -1):
+        if nums[i] == target:
+            return i
+    return None
